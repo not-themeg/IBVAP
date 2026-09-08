@@ -1,0 +1,36 @@
+{
+  "nvidia_smi_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "vram_total_mb": 4096.0,
+  "vram_used_mb": 0.0,
+  "driver_version": "591.91",
+  "gpu_util_percent": 0.0,
+  "memory_util_percent": 0.0,
+  "temp_c": 49,
+  "power_w": 15.33,
+  "torch_version": "2.5.1+cu121",
+  "torch_cuda_version": "12.1",
+  "torch_cuda_available": true,
+  "torch_device_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "torch_compute_capability": [
+    8,
+    6
+  ],
+  "cudnn_version": 90100,
+  "cudnn_available": true,
+  "tensorrt_version": "11.2.1.2",
+  "tensorrt_available": true,
+  "onnxruntime_version": "1.29.0",
+  "onnxruntime_providers": [
+    "TensorrtExecutionProvider",
+    "CUDAExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "onnxruntime_gpu_available": true,
+  "nvcc_path": null,
+  "ffmpeg_path": "C:\\Users\\ddipa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.0.1-full_build\\bin\\ffmpeg.EXE",
+  "docker_path": null,
+  "gstreamer_path": null,
+  "mediamtx_path": true,
+  "nvidia_container_toolkit": null
+}

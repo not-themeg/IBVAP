@@ -1,0 +1,32 @@
+models:
+  - id: yolov8n_pretrained_baseline
+    version: "1.0.0"
+    file: yolov8n.pt
+    source: ultralytics
+    license: AGPL-3.0
+    license_note: |
+      AGPL-3.0 requires source disclosure for network-deployed applications.
+      For commercial/government deployment without source disclosure,
+      a commercial license from Ultralytics is required.
+    input_size: 640
+    classes: COCO-80
+    mAP50_coco: 0.522
+    status: ACTIVE_BASELINE
+    deployment_backend: YOLOAdapter
+    hardware: CPU (Intel Core i3)
+    notes: |
+      Pretrained on COCO 80-class dataset. NOT fine-tuned on border surveillance domain.
+      Person and vehicle detection works on general footage.
+      Domain-specific accuracy (border cameras, night, adverse weather) is NOT evaluated.
+    added: "2026-09-05"
+
+# Future entries — add after training + evaluation:
+#
+#  - id: ibvap_border_v1
+#    version: "1.0.0"
+#    file: ml/runs/ibvap_v1/weights/best.pt
+#    source: custom_trained
+#    license: Internal
+#    mAP50_domain: <fill after evaluation>
+#    status: CANDIDATE
+#    notes: Domain fine-tuned on ibvap_border_surveillance dataset v1

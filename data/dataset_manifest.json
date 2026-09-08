@@ -1,0 +1,57 @@
+[
+  {
+    "sample_id": "sample_1788707903_f756b1",
+    "timestamp": 1788707921.3223813,
+    "camera_id": "WEBCAM-01",
+    "image_file": "sample_1788707903_f756b1.jpg",
+    "classes": [
+      "person"
+    ],
+    "total_objects": 1,
+    "notes": "Test capture"
+  },
+  {
+    "sample_id": "sample_1788708398_654ecc",
+    "timestamp": 1788708398.6113298,
+    "camera_id": "PHONE-CAM-01",
+    "image_file": "sample_1788708398_654ecc.jpg",
+    "classes": [
+      "person"
+    ],
+    "total_objects": 1,
+    "notes": "Real phone camera sample"
+  },
+  {
+    "sample_id": "sample_1788708520_4a50b0",
+    "timestamp": 1788708521.2176044,
+    "camera_id": "WEBCAM-01",
+    "image_file": "sample_1788708520_4a50b0.jpg",
+    "classes": [
+      "person"
+    ],
+    "total_objects": 1,
+    "notes": "Operator captured from Dashboard"
+  },
+  {
+    "sample_id": "sample_1788708633_425d14",
+    "timestamp": 1788708634.5549111,
+    "camera_id": "PHONE-CAM-01",
+    "image_file": "sample_1788708633_425d14.jpg",
+    "classes": [
+      "person"
+    ],
+    "total_objects": 1,
+    "notes": "Real car photo captured by operator"
+  },
+  {
+    "sample_id": "sample_1788710876_418869",
+    "timestamp": 1788710882.7744327,
+    "camera_id": "WEBCAM-01",
+    "image_file": "sample_1788710876_418869.jpg",
+    "classes": [
+      "person"
+    ],
+    "total_objects": 1,
+    "notes": "Operator captured from Dashboard"
+  }
+]
