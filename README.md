@@ -141,6 +141,47 @@ For detailed role assignments and authoritative system disclosures:
 - **[TEST_REPORT.md](TEST_REPORT.md)** — Automated test verification results
 
 ---
+## ✅ What actually works
+
+The current prototype has been tested locally on CPU-only hardware.
+
+- YOLOv8n person/vehicle detection
+- ByteTrack object tracking
+- RTSP ingestion through MediaMTX
+- Virtual fence intrusion detection
+- Real-time alert generation
+- Incident lifecycle management
+- SHA-256 evidence integrity
+- React operations dashboard
+- Webcam testing mode
+- 75/75 automated regression tests
+
+### Still experimental
+
+- High-confidence ANPR on suitable 720p/1080p footage
+- Domain-specific model training
+- GPU/TensorRT deployment
+- Field deployment
+
+## 🔬 Current Limitations
+
+This is a prototype, not a production border-security deployment.
+
+Current limitations include:
+
+- Domain-specific training dataset is not yet available.
+- ANPR reliability depends heavily on plate resolution.
+- GPU/TensorRT deployment has not yet been benchmarked.
+- Current development database uses SQLite.
+- Facial recognition and cross-camera ReID are outside the current scope.
+
+### Next steps
+
+- Build and annotate a domain-specific dataset
+- Benchmark GPU/edge deployment
+- Improve ANPR preprocessing and validation
+- Add multi-camera event correlation
+- Evaluate deployment on edge hardware
 
 ## Important Disclaimers
 
