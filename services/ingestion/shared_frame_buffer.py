@@ -32,7 +32,11 @@ class SharedFrameWriter:
     """
     def __init__(self, camera_id: str, size: int = DEFAULT_SHM_SIZE):
         safe_id = camera_id.replace('-', '_').replace(':', '_').lower()
-        self.shm_name = f'ibvap_frame_{safe_id}'
+        base_name = f"ib_{safe_id}"
+        if len(base_name) > 28:
+            import hashlib
+            base_name = f"ib_{safe_id[:16]}_{hashlib.md5(camera_id.encode()).hexdigest()[:6]}"
+        self.shm_name = base_name
         self.size = size
         self.shm: Optional[shared_memory.SharedMemory] = None
         self._seq_counter: int = 0
@@ -107,7 +111,11 @@ class SharedFrameReader:
     """
     def __init__(self, camera_id: str):
         safe_id = camera_id.replace('-', '_').replace(':', '_').lower()
-        self.shm_name = f'ibvap_frame_{safe_id}'
+        base_name = f"ib_{safe_id}"
+        if len(base_name) > 28:
+            import hashlib
+            base_name = f"ib_{safe_id[:16]}_{hashlib.md5(camera_id.encode()).hexdigest()[:6]}"
+        self.shm_name = base_name
         self.shm: Optional[shared_memory.SharedMemory] = None
 
     def read_frame(self, max_age_seconds: float = 3.5, max_retries: int = 3) -> Optional[Tuple[bytes, float]]:

@@ -137,12 +137,16 @@ class RTSPSource(CameraSource):
                     ret, frame = cap.read()
                     
                     if not ret or frame is None:
-                        consecutive_failures += 1
-                        if consecutive_failures < 4:
-                            time.sleep(0.02)
-                            continue
-                        logger.warning("Stream ended or failed to read frame", camera_id=self.camera_id)
-                        break
+                        if os.path.exists(self.rtsp_url):
+                            cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+                            ret, frame = cap.read()
+                        if not ret or frame is None:
+                            consecutive_failures += 1
+                            if consecutive_failures < 4:
+                                time.sleep(0.02)
+                                continue
+                            logger.warning("Stream ended or failed to read frame", camera_id=self.camera_id)
+                            break
                     consecutive_failures = 0
                         
                     now = datetime.now(timezone.utc)

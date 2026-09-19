@@ -67,6 +67,24 @@ Core philosophy: **Camera replace nahi karni. Existing CCTV ko intelligent banan
 
 ---
 
+## 📸 Platform Walkthrough & UI Demo
+
+### 1. Live AI Detection & Tracking Dashboard
+The core monitoring interface running locally via OpenCV and YOLOv8. It performs real-time multi-object tracking while overlaying customized virtual restricted zones directly onto the live RTSP feed.
+![Dashboard Demo](demo/dashboard.png)
+
+### 2. Perimeter Incidents & Tamper-Proof Audit Trail
+When a virtual boundary violation occurs, the system logs the event into an operational ledger complete with confidence ratings, severity tags, and **SHA-256 evidence hashes**.
+![Incidents Ledger](demo/incidents.png)
+
+### 3. Spatial Virtual Fencing & Zone Configurator
+An intuitive geometry canvas allowing operators to draw and configure custom polygon restriction boundaries evaluated in real-time.
+![Virtual Zones](demo/zones.png)
+
+### 4. System & AI Analytics Settings Hub
+A centralized control panel to manage hardware streams, tune confidence sliders, adjust IoU overlap, and toggle specialized border AI models.
+![Settings Hub](demo/settings.png)
+
 ## Repository Structure
 
 ```

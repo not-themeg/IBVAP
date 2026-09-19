@@ -172,7 +172,23 @@ async def activate_camera(camera_id: str, force: bool = False, phone_url: Option
                 except Exception:
                     pass
     else:
-        rtsp_target = f"rtsp://127.0.0.1:8554/{camera_id}"
+        import socket
+        port_open = False
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.settimeout(0.3)
+                port_open = (s.connect_ex(("127.0.0.1", 8554)) == 0)
+        except Exception:
+            port_open = False
+
+        if port_open:
+            rtsp_target = f"rtsp://127.0.0.1:8554/{camera_id}"
+        else:
+            raw_video = os.path.join(project_root, "data", "raw", "test_video.mp4")
+            if os.path.exists(raw_video):
+                rtsp_target = raw_video
+            else:
+                rtsp_target = f"rtsp://127.0.0.1:8554/{camera_id}"
 
     # Terminate any conflicting or stale inference worker
     evidence_dir = os.path.join(project_root, "data", "evidence")

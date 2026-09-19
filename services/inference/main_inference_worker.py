@@ -102,6 +102,19 @@ class MainInferenceWorker:
         self.debug_mode = debug_mode
         self.running = False
 
+        if "8554" in str(self.rtsp_url) and not self.camera_id.startswith("WEBCAM"):
+            import socket
+            try:
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                    s.settimeout(0.3)
+                    if s.connect_ex(("127.0.0.1", 8554)) != 0:
+                        raw_video = os.path.join(PROJECT_ROOT, "data", "raw", "test_video.mp4")
+                        if os.path.exists(raw_video):
+                            logger.info("MediaMTX RTSP port 8554 inactive; falling back to local simulation video", video_path=raw_video)
+                            self.rtsp_url = raw_video
+            except Exception:
+                pass
+
         os.makedirs(self.evidence_dir, exist_ok=True)
 
         if conf_thresh is None:
